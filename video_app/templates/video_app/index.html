@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Video Group's :)</h1>
+   {% for group in all_groups %}
+   <h1><li><a href="/video/{{ group.id }}/">{{ group.group_title}}</a></li></h1>
+  {% endfor %}
+  </ul>
+
+
+{% endblock %}
+  
