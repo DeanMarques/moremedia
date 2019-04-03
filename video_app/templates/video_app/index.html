@@ -2,12 +2,19 @@
 
 {% block content %}
 
-  <h1>Video Group's :)</h1>
-   {% for group in all_groups %}
-   <h1><li><a href="/video/{{ group.id }}/">{{ group.group_title}}</a></li></h1>
-  {% endfor %}
-  </ul>
+ 
+<div class="row">
+  <div class="col-sm-3"></div>
+   <div class="col-sm-6">
+     <h1>Video Groups:</h1>
+     {% for group in all_groups %}
+     <h1><li><a href="/video/{{ group.id }}/">{{ group.group_title}}</a></li></h1>
+     {% endfor %}
+  </ul>   
 
+    </div>
+    <div class="col-sm-3"></div>
+      </div>
 
 {% endblock %}
   

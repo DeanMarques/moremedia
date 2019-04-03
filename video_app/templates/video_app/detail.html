@@ -2,23 +2,22 @@
 
  {% block content %}
  {% for video in videos %}
- {{video.video_title}}
- <br />
-<div>
-    {% if video.video_url %}
-    <iframe width="400" height="200" src="{{ video.video_url }}?rel=0" frameborder="0" allowfullscreen></iframe>
-    {% endif %}
-
-
-</div>
  
-<div>
-    {% if video.video_file %}
-    <video id="my-video" class="video-js" controls preload="auto" width="400" height="200" data-setup="{}">
-        <source src="{{video.video_file.url}}" type='video/mp4'>
-            </video>
-    {% endif %}
-</div>
+ <br />
+
+<div class="row">
+    <div class="col-sm-3">{{video.video_title}}</div>
+    <div class="col-sm-6">
+            {% if video.video_file %}
+            <video oncontextmenu="return false;" id="my-video-player" width="450" height="250" controls controlsList="nodownload">
+          <source src="{{video.video_file.url}}" type="video/mp4">
+          </video>
+           
+            {% endif %}
+
+    </div>
+    <div class="col-sm-3"></div>
+      </div>
 <hr>
  {% endfor %}
  {% endblock %}
